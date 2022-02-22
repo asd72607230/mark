@@ -3,9 +3,6 @@ const app = express();
 const bcrypt = require("bcrypt");
 const session = require("express-session");
 const path = require("path");
-
-const bodyParser = require('body-parser');
-const e = require("express");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
