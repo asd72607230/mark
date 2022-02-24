@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #fff7f7;
+            background-color: #dacccc;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,8 +24,8 @@
         .container {
             /* #08ffc8 */
             background-color: #204969;
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 500px;
             text-align: center;
             margin-top: 50px;
         }
@@ -44,28 +44,31 @@
             margin-left: 30px;
         }
 
-        .email {
+        .item {
             margin-bottom: 20px;
-        }
-
-        .password {
-            margin-bottom: 20px;
+            position: relative;
+            right: 50px;
         }
 
         .btn {
-            padding: 2px 30px;
+            padding: 5px 0;
+            width: 250px;
             color: white;
             background-color: #08ffc8;
             font-weight: bold;
             font-size: 16px;
+            position: relative;
+            top: 185px;
+            right: 55px;
         }
 
         .register {
             background-color: #08ffc8;
-            margin-top: 105px;
             width: 250px;
             padding: 5px 0;
-            margin-left: 75px;
+            position: relative;
+            top: 185px;
+            left: 20px;
         }
 
         .register a {
@@ -80,15 +83,15 @@
     <div class="container">
         <p>Login</p>
         <form action="/login" method="post" class="form">
-            <div class="email">
+            <div class="item">
                 <label for="email">信箱 :</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="password">
+            <div class="item">
                 <label for="password">密碼 :</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="button" class="btn">登入</button><br>
+            <button type="submit" class="btn">登入</button><br>
         </form>
         <div class="register"><a href="/register">註冊</a></div>
     </div>

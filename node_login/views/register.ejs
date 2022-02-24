@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #fff7f7;
+            background-color: #dacccc;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,10 +23,9 @@
         }
 
         .container {
-            /* #08ffc8 */
             background-color: #204969;
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 500px;
             text-align: center;
             margin-top: 50px;
         }
@@ -41,42 +40,40 @@
             width: 300px;
             padding: 20px;
             margin-top: 20px;
-            margin-left: 30px;
+            margin-left: -20px;
         }
 
-        .name {
+        .item {
             margin-bottom: 20px;
         }
 
-        .email {
-            margin-bottom: 20px;
-        }
-
-        .password {
-            margin-bottom: 20px;
-        }
-
-        .tel {
-            margin-bottom: 20px;
+        .psw {
+            position: relative;
+            right: 16px;
         }
 
         .btn {
-            padding: 2px 30px;
+            padding: 5px 0;
+            width: 250px;
             color: white;
             background-color: #08ffc8;
             font-weight: bold;
             font-size: 16px;
+            position: relative;
+            top: 70px;
+            right: 5px;
         }
 
-        .register {
+        .login {
             background-color: #08ffc8;
-            margin-top: 20px;
             width: 250px;
             padding: 5px 0;
-            margin-left: 75px;
+            position: relative;
+            top: 65px;
+            left: 20px;
         }
 
-        .register a {
+        .login a {
             text-decoration: none;
             color: white;
         }
@@ -88,25 +85,29 @@
     <div class="container">
         <p>Register</p>
         <form action="/register" method="post" class="form">
-            <div class="name">
+            <div class="item">
                 <label for="name">姓名 :</label>
                 <input type="text" id="name" name="name" required>
             </div>
-            <div class="email">
+            <div class="item">
                 <label for="email">信箱 :</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="password">
+            <div class="item">
                 <label for="password">密碼 :</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <div class="tel">
+            <div class="item psw">
+                <label for="password_confirm">密碼確認 :</label>
+                <input type="password" id="password_confirm" name="password_confirm" required>
+            </div>
+            <div class="item">
                 <label for="tel">電話 :</label>
                 <input type="tel" id="tel" name="tel" required>
             </div>
-            <button type="button" class="btn">註冊</button><br>
+            <button type="submit" class="btn">註冊</button><br>
         </form>
-        <div class="register"><a href="/login">登入</a></div>
+        <div class="login"><a href="/login">登入</a></div>
     </div>
 </body>
 

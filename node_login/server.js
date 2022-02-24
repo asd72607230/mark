@@ -46,7 +46,6 @@ app.post('/login', (req, res) => {
         if (err) throw err;
         var output = {}
         if (rows.length != 0) {
-            // console.log(rows[0]['user_pwd']);
             var password_hash = rows[0]['user_pwd'];
             const verified = bcrypt.compareSync(req.body.password, password_hash);
             if (verified) {
