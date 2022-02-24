@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot the differences</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+        var music;
+        window.onload = function () {
+            music = document.getElementById("music");      
+        }
+        function play() {
+            music.play();
+        }
+        function mute() {
+            music.pause();
+        }
+
+    </script>
+
+
+    <style>
+        @keyframes blinking {
+            0% {
+                opacity: 100%;
+            }
+
+            50% {
+                opacity: 60%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        @keyframes myShow {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            animation: myShow .5s ease-in-out;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container h3 {
+            font-size: 72px;
+            position: absolute;
+            top: 150px;
+            left: 410px;
+            color: #15F4ee;
+            font-style: italic;
+            font-weight: 700;
+            text-shadow: 2px 5px 6px #ff5c5c;
+            letter-spacing: 5px;
+            animation-name: blinking;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .button {
+            position: absolute;
+            top: 300px;
+            left: 650px;
+            text-align: center;
+            margin: auto;
+            width: 250px;
+            padding: 30px;
+            font-size: 30px;
+            font-weight: 400;
+            border: 5px solid #15F4ee;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            cursor: pointer;
+            border-radius: 100px;
+            transition: 1.5s;
+            animation-name: blinking;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .button:hover {
+            box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+            text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: #15f4ee;
+        }
+
+        #music {
+            display: none;
+        }
+
+        .playmusic {
+            position: relative;
+            left: 650px;
+            top: 700px;
+            color: #15F4ee;
+            background-color: #15F4ee;
+            text-align: center;
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #15F4ee;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 1.5s;
+        }
+
+        .playmusic img {
+            width: 40px;
+        }
+
+        .playmusic:hover {
+            box-shadow: 0 5px 10px 0 #15f4ee inset, 0 0px 20px 0 #15f4ee;
+            text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+        }
+
+        .mutemusic{
+            position: relative;
+            left: 715px;
+            top: 649px;
+            color: #15F4ee;
+            background-color: #15F4ee;
+            text-align: center;
+            margin: auto;
+            width: 53px;
+            height: 53px;
+            border: 6px solid #15F4ee;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 1.5s;
+        }
+
+        .mutemusic img{
+            width: 40px;
+        }
+
+        .mutemusic:hover {
+            box-shadow: 0 5px 10px 0 #15f4ee inset, 0 0px 20px 0 #15f4ee;
+            text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Spot The Differences</h3>
+        <div class="button" id="btn"><a href="./index2.html">Start</a></div>
+    </div>
+
+    <audio src="./img/background_music.mp3" id="music"></audio>
+    <div onclick="play()" type="button" class="playmusic"><img src="./img/music.png"></div>
+    <div onclick="mute()" type="button" class="mutemusic"><img src="./img/mute.png"></div>
+
+</body>
+
+</html>

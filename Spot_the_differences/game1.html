@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function () {
+            var next = document.getElementById("next");
+            next.disabled = true;
+        }
+
+        var a = 0;
+        var b = 0;
+        function show1() {
+            var next = document.getElementById("next");
+            var temp = document.getElementById("ans");
+            temp.classList.remove("original");
+            temp.classList.add("show");
+            a += 1;
+            temp.disabled = true;
+            if (a + b == 2) {
+                var test = document.getElementById("next");
+                test.classList.remove("next");
+                test.classList.add("show3");
+                next.disabled = false;
+            }
+        }
+        function show2() {
+            var next = document.getElementById("next");
+            var temp = document.getElementById("ans2");
+            temp.classList.remove("original2");
+            temp.classList.add("show2");
+            b += 1;
+            temp.disabled = true;
+            if (a + b == 2) {
+                var test = document.getElementById("next");
+                test.classList.remove("next");
+                test.classList.add("show3");
+                next.disabled = false;
+            }
+        }
+
+    </script>
+
+
+    <style>
+        @keyframes myShow {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        @keyframes blinking {
+            0% {
+                opacity: 100%;
+            }
+
+            50% {
+                opacity: 60%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        .show {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: 5px solid red;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            cursor: default;
+            overflow: hidden;
+            position: absolute;
+            top: 186px;
+            left: 933px;
+            animation: myShow .5s ease-in-out;
+        }
+
+
+        .show2 {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: 5px solid red;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            overflow: hidden;
+            position: absolute;
+            top: 655px;
+            left: 1072px;
+            animation: myShow .5s ease-in-out;
+        }
+
+        .show3 {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            font-style: italic;
+            font-weight: 800;
+            font-size: 20px;
+            left: 1400px;
+            top: 320px;
+            background-color: white;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            border: none;
+            cursor: default;
+            overflow: hidden;
+            animation: myShow .5s ease-in-out;
+        }
+
+
+        body {
+            animation: myShow .5s ease-in-out;
+            background-color: black;
+            background-image: url(./img/背景/困難.jpg);
+            cursor: pointer;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+        }
+
+        .container h3 {
+            position: absolute;
+            top: 45px;
+            left: 360px;
+            font-style: italic;
+            font-weight: 800;
+            font-size: 50px;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .container img {
+            position: relative;
+            top: 100px;
+            margin: 40px 20px;
+            border: 10px solid black;
+            border-image: linear-gradient(rgb(70, 69, 69), white) 25;
+        }
+
+        h2 {
+            color: white;
+            font-style: italic;
+            font-weight: 800;
+            letter-spacing: 2px;
+            position: absolute;
+            top: 35px;
+            left: 120px;
+            font-size: 55px;
+            animation-name: blinking;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        .original {
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: default;
+            overflow: hidden;
+            position: absolute;
+            top: 186px;
+            left: 933px;
+        }
+
+        .original2 {
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: default;
+            overflow: hidden;
+            position: absolute;
+            top: 655px;
+            left: 1072px;
+        }
+
+
+        .next {
+            width: 70px;
+            height: 50px;
+            position: absolute;
+            left: 1400px;
+            top: 320px;
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            border: none;
+            cursor: default;
+            overflow: hidden;
+            color: Transparent;
+        }
+
+        .home {
+            position: relative;
+            top: -605px;
+            left: 50px;
+            background-color: Transparent;
+            border: none;
+        }
+
+        .home img {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Find 2 Differences</h3>
+        <img src="./img/1-1.png" alt="A">
+        <img src="./img/1-2.png" alt="B">
+    </div>
+    <h2>Level 1</h2>
+    <button class="original" id="ans" onclick="show1()"></button>
+    <button class="original2" id="ans2" onclick="show2()"></button>
+    <button class="next" id="next" onclick="location.href='http://127.0.0.1:5501/game2.html'">Next!</button>
+
+    <button class="home" onclick="location.href='http://127.0.0.1:5501/index.html'"><img src="./img/home.png"></button>
+</body>
+
+</html>
