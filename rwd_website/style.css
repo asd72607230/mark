@@ -4,6 +4,11 @@
     font-family: sans-serif;
 }
 
+body {
+    overflow: hidden;
+    background-color: black;
+}
+
 .container {
     width: 100%;
     min-height: 100vh;
@@ -20,9 +25,8 @@
 }
 
 .logo {
-    width: 50px;
+    width: 100px;
     cursor: pointer;
-    margin: 30px 0;
 }
 
 .menu-icon {
@@ -44,12 +48,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #000;
+    color: white;
     font-size: 14px;
 }
 
 nav ul li a:hover {
-    color: #ff5ea2;
+    color: #1af53f;
+    font-size: 15px;
 }
 
 .row {
@@ -67,11 +72,12 @@ nav ul li a:hover {
 
 .col-1 h2 {
     font-size: 54px;
+    color: white;
 }
 
 .col-1 h3 {
     font-size: 30px;
-    color: #707070;
+    color: white;
     font-weight: 100;
     margin: 20px 0 10px;
 }
@@ -93,7 +99,7 @@ button {
     padding: 12px 10px;
     outline: none;
     color: #fff;
-    background: linear-gradient(to right, #fb5283, #ff3527);
+    background: linear-gradient(to right, #47fc00, #008111);
     border-radius: 6px;
     cursor: pointer;
     transition:  width 0.5s;
@@ -110,7 +116,7 @@ button:hover img {
 }
 
 button:hover {
-    width: 160px;
+    width: 140px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -120,7 +126,7 @@ button:hover {
     content: "";
     width: 10px;
     height: 57%;
-    background: linear-gradient(#ff4690, #ff6062);
+    background: linear-gradient(#008111, #47fc00);
     position: absolute;
     left: -40px;
     top: 8px;
@@ -141,7 +147,7 @@ button:hover {
     position: absolute;
     right: 0;
     top: 0;
-    background: linear-gradient(#ff54a2, #ff575a);
+    background: linear-gradient(#03ff39, #000000);
     border-radius: 20px 0 0 20px;
     height: 80%;
     width: 80%;
@@ -160,8 +166,14 @@ button:hover {
     cursor: pointer;
 }
 
+.add-btn p:hover {
+    color: rgb(129, 129, 129);
+}
+
 .social-links img{
-    height: 13px;
+    background-color: grey;
+    border-radius: 15px;
+    height: 25px;
     margin: 20px;
     cursor: pointer;
 }
@@ -172,9 +184,11 @@ button:hover {
 
 @media only screen and (max-width:700px) {
     
+
+
     nav ul {
         width: 100%;
-        background: linear-gradient(#ff54a2, #ff575a);;
+        background: linear-gradient(#008111, #47fc00);;
         position: absolute;
         top: 75px;
         right: 0;
