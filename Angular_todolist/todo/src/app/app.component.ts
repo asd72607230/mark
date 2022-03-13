@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'todo';
 
@@ -29,5 +30,9 @@ export class AppComponent {
       description,
       done: false
     })
+  }
+
+  remove(item) {
+    this.allItems.splice(this.allItems.indexOf(item), 1);
   }
 }
